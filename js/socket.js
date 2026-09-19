@@ -1,9 +1,10 @@
 var ws = null;
 
 // const endpoint = atob(new URLSearchParams(window.location.search).get("id"));
-const endpoint = 'localhost:3000'
+const endpoint = window.location.hostname + ':3000'
 
 const socketConnector = () => {
+  console.log('Attempting to connect to WS at:', `ws://${endpoint}/ws`);
   ws = new WebSocket(`ws://${endpoint}/ws`);
 
   ws.onopen = () => {
