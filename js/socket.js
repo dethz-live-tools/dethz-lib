@@ -1,6 +1,7 @@
 var ws = null;
 
-const endpoint = atob(new URLSearchParams(window.location.search).get("id"));
+// const endpoint = atob(new URLSearchParams(window.location.search).get("id"));
+const endpoint = 'localhost:3000'
 
 const socketConnector = () => {
   ws = new WebSocket(`ws://${endpoint}/ws`);
